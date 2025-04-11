@@ -1,5 +1,5 @@
 # HCI-Assignment
- An application developed following HCI principles by the following BIS 4 sudents:
+ An application developed following HCI principles by the following BIS 4 sudents:  
     **George Makina Frezer**  
     **Nyaraih Banda**  
     **Peace Mpamela**  
