@@ -1,12 +1,15 @@
 from django.db import models
 
 # Create your models here.
-class Post(models.Model):
-    title = models.CharField(max_length=50)
-    content = models.TextField(max_length=200)
-    
-    class Meta:
-        ordering = ("title",)
-        
-    def __str__(self):
-        return self.title
+class Student(models.Model):
+  Reg_no= models.CharField(max_length=50,primary_key=True)
+  Username= models.CharField(max_length=100)
+  Name= models.CharField(max_length=255)
+  Password= models.CharField(max_length=20)
+  Role= models.CharField(max_length=50)
+  Program=models.CharField(max_length=255)
+
+  def __str__(self):
+        return self.name
+  
+  
