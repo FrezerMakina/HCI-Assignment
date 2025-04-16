@@ -11,4 +11,12 @@ class Student(models.Model):
 
   def __str__(self):
         return self.Name
-  
+class Event(models.Model):
+    Id=models.IntegerField(primary_key=True)
+    Title=models.CharField(max_length=255)
+    Description=models.CharField(max_length=10000) 
+    Category=models.CharField(max_length=100)
+    Date=models.DateField()
+    
+    def __str__(self):
+        return self.Title
