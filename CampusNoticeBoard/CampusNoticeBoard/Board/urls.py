@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from . import views
+from .views import *
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('', views.PostView.as_view(), name="homepage"),
-]
+router = DefaultRouter()
+router.register('post', PostViewset, basename='post')
+
+urlpatterns = router.urls

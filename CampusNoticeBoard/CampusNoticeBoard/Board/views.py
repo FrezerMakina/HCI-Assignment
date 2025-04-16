@@ -1,10 +1,16 @@
 from django.shortcuts import render
-from .models import Post
-from django.views.generic import ListView
+from rest_framework import viewsets, permissions
+from .serializers import *
+from .models import *
+from rest_framework.response import Response
 
 # Create your views here.
-class PostView(ListView):
-    model = Post
-    template_name = "Board/index.html"
-    context_object_name = "posts"
-
+class PostViewset(viewsets.ViewSet):
+    permission_classes = [permissions.AllowAny]
+    queryset = Post.objects.all()
+    serializer_class = PostSerilializer
+    
+    def list(self, request):
+        queryset = Post.objects.all()
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)
