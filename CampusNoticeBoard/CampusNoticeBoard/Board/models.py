@@ -6,7 +6,7 @@ class Student(models.Model):
   Username= models.CharField(max_length=100)
   Name= models.CharField(max_length=255)
   Password= models.CharField(max_length=20)
-  Role= models.CharField(max_length=50)
+  Role= models.CharField(max_length=50 , default='student')
   Program=models.CharField(max_length=255)
 
   def __str__(self):
