@@ -41,3 +41,116 @@ class StudentViewset(viewsets.ViewSet):
         queryset = self.queryset.get(pk=pk)
         queryset.delete()
         return Response(status=204)
+    
+class EventViewset(viewsets.ViewSet):
+    permission_classes = [permissions.AllowAny]
+    queryset = Event.objects.all()
+    serializer_class = EventSerilializer
+    
+    def list(self, request):
+        queryset = Event.objects.all()
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)
+    
+    def create(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=400)
+        
+    def retrieve(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        serializer = self.serializer_class(queryset)
+        return Response(serializer.data)
+    
+    def update(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        serializer = self.serializer_class(queryset, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=400)
+        
+    def destroy(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        queryset.delete()
+        return Response(status=204)
+
+
+class CommentsViewset(viewsets.ViewSet):
+    permission_classes = [permissions.AllowAny]
+    queryset = Comments.objects.all()
+    serializer_class = CommentsSerilializer
+    
+    def list(self, request):
+        queryset = Comments.objects.all()
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)
+    
+    def create(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=400)
+        
+    def retrieve(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        serializer = self.serializer_class(queryset)
+        return Response(serializer.data)
+    
+    def update(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        serializer = self.serializer_class(queryset, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=400)
+        
+    def destroy(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        queryset.delete()
+        return Response(status=204)
+    
+    
+class LikeViewset(viewsets.ViewSet):
+    permission_classes = [permissions.AllowAny]
+    queryset = Like.objects.all()
+    serializer_class = LikeSerilializer
+    
+    def list(self, request):
+        queryset = Like.objects.all()
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)
+    
+    def create(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=400)
+        
+    def retrieve(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        serializer = self.serializer_class(queryset)
+        return Response(serializer.data)
+    
+    def update(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        serializer = self.serializer_class(queryset, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=400)
+        
+    def destroy(self, request, pk=None):
+        queryset = self.queryset.get(pk=pk)
+        queryset.delete()
+        return Response(status=204)
