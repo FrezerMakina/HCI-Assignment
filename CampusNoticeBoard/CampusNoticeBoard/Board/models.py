@@ -20,3 +20,26 @@ class Event(models.Model):
     
     def __str__(self):
         return self.Title
+class Comments(models.Model):
+   Comment_id=models.AutoField(primary_key=True)
+   Id = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='Comments')
+   content = models.TextField()
+   created_at = models.DateTimeField(auto_now_add=True)
+   Username=models.ForeignKey(Student, on_delete=models.CASCADE, related_name='Student')
+def __str__(self):
+    return f'Comment on {self.event.Title}'
+
+from django.contrib.auth.models import User
+
+class Like(models.Model):
+    Id= models.ForeignKey(Event, on_delete=models.CASCADE, related_name='likes')
+    Username= models.ForeignKey(Student, on_delete=models.CASCADE)
+    liked_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('Id', 'Username')  # prevent duplicate likes
+
+    def __str__(self):
+        return f"{self.Student.Username} liked {self.event.Title}"
+
+    
