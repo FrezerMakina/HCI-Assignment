@@ -20,3 +20,7 @@ class Event(models.Model):
     
     def __str__(self):
         return self.Title
+#class Comments(models.Model):
+ #   Comment_id=models.AutoField(primary_key=True)
+ #   Id=models.ForeignKey()
+    

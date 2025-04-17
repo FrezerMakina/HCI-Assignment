@@ -3,5 +3,5 @@ from .models import *
 
 class PostSerilializer(serializers.ModelSerializer):
     class Meta:
-        model = Post
+        model =Post
         fields = '__all__'
