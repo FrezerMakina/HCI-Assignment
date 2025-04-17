@@ -5,12 +5,12 @@ from .models import *
 from rest_framework.response import Response
 
 # Create your views here.
-class PostViewset(viewsets.ViewSet):
+class StudentViewset(viewsets.ViewSet):
     permission_classes = [permissions.AllowAny]
-    queryset = Post.objects.all()
-    serializer_class = PostSerilializer
+    queryset = Student.objects.all()
+    serializer_class = StudentSerilializer
     
     def list(self, request):
-        queryset = Post.objects.all()
+        queryset = Student.objects.all()
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data)

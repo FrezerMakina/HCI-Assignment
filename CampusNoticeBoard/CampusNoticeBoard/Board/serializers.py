@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import *
 
-class PostSerilializer(serializers.ModelSerializer):
+class StudentSerilializer(serializers.ModelSerializer):
     class Meta:
-        model =Post
+        model = Student
         fields = '__all__'
