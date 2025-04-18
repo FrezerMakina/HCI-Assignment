@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'Board.apps.BoardConfig',
+    'CampusNoticeBoard.Board.apps.BoardConfig',
     # 'CampusNoticeBoard.Board',
     'rest_framework',
 ]
