@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'CampusNoticeBoard.Board.apps.BoardConfig',
-    # 'CampusNoticeBoard.Board',
+    'CampusNoticeBoard.Board',
     'rest_framework',
 ]
 
@@ -75,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CampusNoticeBoard.CampusNoticeBoard.wsgi.application'
+WSGI_APPLICATION = 'CampusNoticeBoard.wsgi.application'
 
 
 # Database
