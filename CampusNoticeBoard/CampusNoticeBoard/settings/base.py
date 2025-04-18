@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CampusNoticeBoard.wsgi.application'
+WSGI_APPLICATION = 'CampusNoticeBoard.CampusNoticeBoard.wsgi.application'
 
 
 # Database
