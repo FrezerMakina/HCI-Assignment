@@ -3,6 +3,6 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Student)
-admin.site.register(Event)
+admin.site.register(Notice)
 admin.site.register(Comments)
 admin.site.register(Like)

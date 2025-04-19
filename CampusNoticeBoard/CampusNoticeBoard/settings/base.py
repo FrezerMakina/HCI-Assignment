@@ -53,9 +53,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000",
-]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'CampusNoticeBoard.urls'
 
@@ -85,9 +84,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'wVnrlMABSaqEeAhDsNNCrkzpIrTzzlHF',
-        'HOST': 'tramway.proxy.rlwy.net',
-        'PORT': '10555',
+        'PASSWORD': 'BdPRXqXHnKgGsfLIooMNgXymTiNVUKoD',
+        'HOST': 'gondola.proxy.rlwy.net',
+        'PORT': '10656',
     }
 }
 
