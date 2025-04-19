@@ -42,13 +42,13 @@ class StudentViewset(viewsets.ViewSet):
         queryset.delete()
         return Response(status=204)
     
-class EventViewset(viewsets.ViewSet):
+class NoticeViewset(viewsets.ViewSet):
     permission_classes = [permissions.AllowAny]
-    queryset = Event.objects.all()
-    serializer_class = EventSerilializer
+    queryset = Notice.objects.all()
+    serializer_class = NoticeSerilializer
     
     def list(self, request):
-        queryset = Event.objects.all()
+        queryset = Notice.objects.all()
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data)
     

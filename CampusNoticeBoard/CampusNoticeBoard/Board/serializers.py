@@ -6,9 +6,9 @@ class StudentSerilializer(serializers.ModelSerializer):
         model = Student
         fields = '__all__'
         
-class EventSerilializer(serializers.ModelSerializer):
+class NoticeSerilializer(serializers.ModelSerializer):
     class Meta:
-        model = Event
+        model = Notice
         fields = '__all__'
         
 class CommentsSerilializer(serializers.ModelSerializer):
